@@ -1,6 +1,6 @@
 <?php
     if(!empty($_GET)) {
-        sleep(5000);
+        sleep(3);
         echo 'yo';exit;
     }
 ?>
@@ -12,7 +12,7 @@
         <script>
             function callme() {
                 $.ajax({
-                    async: true,
+                    async: false,
                     type: 'GET',
                     data: {data: 'get'},
                     url: '<?php echo $_SERVER['PHP_SELF']; ?>',
@@ -27,5 +27,6 @@
         <button onclick="callme()">Call</button>
         <br><br><br>
         <button onclick="callme()">Call</button>
+        <textarea></textarea>
     </body>
 </html>
