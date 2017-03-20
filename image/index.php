@@ -1,25 +1,36 @@
 <?php
 
-// To create an image from the text
-$text = 'Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. ';
+/*
+// Set the content-type
+header('Content-Type: image/png');
 
-$im = imagecreate(500, 500);
+// The text to draw
+$text = 'Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta.';
 
-// White background and blue text
-$bg = imagecolorallocate($im, 255, 255, 255);
-$textcolor = imagecolorallocate($im, 0, 0, 255);
+$text = wordwrap($text, 38, "\n");
 
-// Write the string at the top left
+// Create the image
+$im = imagecreatetruecolor(500, 500);
+
+// Create some colors
+$white = imagecolorallocate($im, 255, 255, 255);
+$grey = imagecolorallocate($im, 128, 128, 128);
+$black = imagecolorallocate($im, 0, 0, 0);
+imagefilledrectangle($im, 0, 0, 499, 499, $white);
+
+// Replace path by your own font path
+$font = 'raleway/Raleway-MediumItalic.ttf';
+
 $textlength = strlen($text);
-$charperline = 50; 
+$charperline = 53;
+$lines = $textlength / $charperline;
 
-imagestring($im, 5, 10, 250, $text, $textcolor);	
+imagettftext($im, 20, 0, 20, 100, $grey, $font, $text);
 
-// Output the image
-header('Content-type: image/png');
-
+// Using imagepng() results in clearer text compared with imagejpeg()
 imagepng($im);
-exit;
+imagedestroy($im);
+
 // */
 
 // To add an watermark image on the image
@@ -28,13 +39,13 @@ $stamp = imagecreatefrompng('stamp.png');
 $im = imagecreatefrompng('download.png');
 
 // Set the margins for the stamp and get the height/width of the stamp image
-$marge_right = 10;
-$marge_bottom = 10;
+$marge_right = 180;
+$marge_bottom = 50;
 $sx = imagesx($stamp);
 $sy = imagesy($stamp);
 
-// Copy the stamp image onto our photo using the margin offsets and the photo 
-// width to calculate positioning of the stamp. 
+// Copy the stamp image onto our photo using the margin offsets and the photo
+// width to calculate positioning of the stamp.
 imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
 
 // Output and free memory
