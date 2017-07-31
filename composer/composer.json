@@ -1,0 +1,19 @@
+{
+    "name": "xparthxvora/demo",
+    "description": "Demo package",
+    "type": "composer-plugin",
+    "require": {
+        "monolog/monolog": "^1.23"
+    },
+    "authors": [
+        {
+            "name": "Parth vora",
+            "email": "parth.vora.777@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "xparthxvorax\\": "src/"
+        }
+    }
+}
