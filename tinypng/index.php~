@@ -1,0 +1,8 @@
+<?php
+
+require_once("vendor/autoload.php");
+
+\Tinify\setKey("ylDeTGl02pU_2RIUx78nA6sEsiOX1jNd");
+
+
+

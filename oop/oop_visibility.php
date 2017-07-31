@@ -28,3 +28,6 @@ echo '<br><br>';
 echo baseClass::$staticVar;
 echo '<br><br>';
 echo baseClass::baseStaticMethod();
+
+
+

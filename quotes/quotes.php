@@ -1,7 +1,10 @@
 <?php
-$p = "PP";
+$p = "Hello world";
 
-echo '\n$p..';
-echo '<br>';
-echo "\n$p..";
+echo "$p";
+
+echo '<br/>';
+
+echo '$p';
 ?>
+
