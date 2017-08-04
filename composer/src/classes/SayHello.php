@@ -1,8 +1,8 @@
 <?php 
 
-namespace xparthxvorax\classes;
+namespace xparthxvorax\demo\classes;
 
-use xparthxvorax\classes\inc\SubClass;
+use xparthxvorax\demo\classes\inc\SubClass;
 
 class SayHello extends SubClass
 {

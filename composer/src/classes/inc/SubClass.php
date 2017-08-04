@@ -1,6 +1,6 @@
 <?php 
 
-namespace xparthxvorax\classes\inc;
+namespace xparthxvorax\demo\classes\inc;
 
 class SubClass
 {
